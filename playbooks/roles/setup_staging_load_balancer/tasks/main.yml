@@ -1,6 +1,6 @@
 - name: Check if certificate exists and is valid
   ansible.builtin.stat:
-    path: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem"
+    path: "/etc/letsencrypt/live/{{ domain}}/fullchain.pem"
   register: cert_file
   become: true
 
