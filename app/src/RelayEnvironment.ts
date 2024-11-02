@@ -6,7 +6,7 @@ import {
   FetchFunction,
 } from "relay-runtime";
 
-const HTTP_ENDPOINT = "https://api.staging.isaac.cc/graphql/";
+const HTTP_ENDPOINT = "https://api.staging.supercortex.io/graphql/";
 
 const fetchFn: FetchFunction = async (request, variables) => {
   try {

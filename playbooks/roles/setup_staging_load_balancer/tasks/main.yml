@@ -45,10 +45,10 @@
 - name: Obtain SSL certificate using Certbot
   ansible.builtin.command: >
     certbot certonly --webroot -w /var/www/certbot
-    --email admin@{{ domain_name }}
+    --email admin@{{ domain }}
     --agree-tos
     --no-eff-email
-    -d {{ domain_name }}
+    -d {{ domain }}
   register: certbot_result
   become: true
   when: not ssl_enabled | bool
@@ -61,7 +61,7 @@
 
 - name: Check if certificate exists and is valid
   ansible.builtin.stat:
-    path: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem"
+    path: "/etc/letsencrypt/live/{{ domain }}/fullchain.pem"
   register: cert_file
   become: true
 
