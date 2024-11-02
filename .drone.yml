@@ -19,9 +19,9 @@ steps:
         from_secret: dockerhub_username
       password:
         from_secret: dockerhub_password
-      repo: scootekunst/supercortex-frontend-nginx-${DRONE_BRANCH}
+      repo: scootekunst/supercortex_frontend_nginx-${DRONE_BRANCH}
       dockerfile: nginx/Dockerfile
-      cache_from: scootekunst/supercortex-frontend-nginx-${DRONE_BRANCH}
+      cache_from: scootekunst/supercortex_frontend_nginx-${DRONE_BRANCH}
       tags:
         - latest
       when:
