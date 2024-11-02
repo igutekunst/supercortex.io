@@ -1,0 +1,26 @@
+site_name: "supercortex_frontend"
+site_prefix: "app"
+django_dir: "{{ playbook_dir }}/../app"
+dockerhub_user: "scootekunst"
+image_name: "{{ dockerhub_user }}/{{ site_name }}-{{env}}"
+nginx_image: "{{ dockerhub_user }}/{{ site_name }}-nginx-{{env}}"
+
+certbot_email: "isaac@isaac.cc"
+
+postgres_user: "{{ site_name}}_db_user"
+postgres_db: "{{ site_name}}_db"
+
+admin_email: "admin@supercortex.io"
+
+email_host: "smtp.gmail.com"
+email_port: 587
+email_use_tls: true
+email_host_user: "admin@supercortex.io"
+allowed_hosts: "localhost, 127.0.0.1,{{domain}}"
+
+nginx_port: 11980
+
+# List of initial secrets to generate
+initial_secrets:
+include_vars:
+  file: "{{ playbook_dir }}/group_vars/all/shared_vars.yml"

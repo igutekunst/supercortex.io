@@ -1,0 +1,3 @@
+nginx_port: 11980
+env: "staging"
+domain: "staging.supercortex.io"
